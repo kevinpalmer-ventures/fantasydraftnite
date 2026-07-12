@@ -88,7 +88,7 @@ export function DraftRoom({ mode }: { mode: "snake" | "auction" }) {
       {/* room header */}
       <header className="flex items-center gap-3 border-b px-4 py-3 hairline md:px-6">
         <Link to="/" className="font-display text-sm font-bold tracking-tight text-chalk transition-opacity hover:opacity-70">
-          Fantasy Draft Room
+          Fantasy Draft Nite
         </Link>
         <span className="rounded-[3px] bg-pitch-3 px-2 py-0.5 font-chyron text-[10px] uppercase tracking-wider text-mist">
           {state.mode} demo

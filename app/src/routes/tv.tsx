@@ -6,7 +6,7 @@ import { TvBoard } from "../components/draft/TvBoard";
 export const Route = createFileRoute("/tv")({
   head: () => ({
     meta: [
-      { title: "TV board · Fantasy Draft Room" },
+      { title: "TV board · Fantasy Draft Nite" },
       { name: "description", content: "The read-only television presentation: a synchronized draft board, ticker and player cards." },
     ],
   }),

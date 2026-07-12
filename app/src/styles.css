@@ -21,7 +21,7 @@
 
 @import "tw-animate-css";
 
-/* Fantasy Draft Room brand fonts */
+/* Fantasy Draft Nite brand fonts */
 @import "@fontsource-variable/outfit";
 @import "@fontsource/ibm-plex-mono/400.css";
 @import "@fontsource/ibm-plex-mono/500.css";
@@ -99,7 +99,7 @@
   --radius: 0.625rem;
 }
 
-/* ---- Fantasy Draft Room brand tokens (design-brief.md) ---- */
+/* ---- Fantasy Draft Nite brand tokens (design-brief.md) ---- */
 @theme {
   --color-pitch: #0b1322;
   --color-pitch-2: #0e1a30;

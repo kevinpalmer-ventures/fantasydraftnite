@@ -1,7 +1,7 @@
 services:
   web:
     build: .
-    image: fantasy-draft-room:local
+    image: fantasy-draft-nite:local
     ports:
       - "8080:8080"
     volumes:

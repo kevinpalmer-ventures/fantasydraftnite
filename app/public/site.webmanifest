@@ -1,6 +1,6 @@
 {
-  "name": "Fantasy Draft Room",
-  "short_name": "Draft Room",
+  "name": "Fantasy Draft Nite",
+  "short_name": "Draft Nite",
   "description": "A real-time fantasy football draft room: managers on phones, commissioner in control, the TV as the stage.",
   "start_url": "/",
   "display": "standalone",
@@ -8,7 +8,7 @@
   "theme_color": "#0b1322",
   "icons": [
     {
-      "src": "/assets/logo-fdr.png",
+      "src": "/assets/logo-fdn.png",
       "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any maskable"

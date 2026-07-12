@@ -94,7 +94,7 @@ function buildHead(meta: AppMeta) {
     links: [
       { rel: "stylesheet", href: appCss },
       ...(favicon ? [{ rel: "icon", href: favicon }] : []),
-      { rel: "apple-touch-icon", href: "/assets/logo-fdr.png" },
+      { rel: "apple-touch-icon", href: "/assets/logo-fdn.png" },
       { rel: "manifest", href: "/site.webmanifest" },
     ],
   };

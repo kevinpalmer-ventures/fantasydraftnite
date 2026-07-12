@@ -7,7 +7,7 @@ import { DraftRoom } from "../components/draft/DraftRoom";
 export const Route = createFileRoute("/demo")({
   head: () => ({
     meta: [
-      { title: "Demo draft room · Fantasy Draft Room" },
+      { title: "Demo draft room · Fantasy Draft Nite" },
       { name: "description", content: "Run a live mock draft against nine AI managers. Snake or auction, real clock, real rules." },
     ],
   }),

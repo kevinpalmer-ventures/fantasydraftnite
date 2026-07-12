@@ -1,4 +1,4 @@
-# Fantasy Draft Room — design brief
+# Fantasy Draft Nite — design brief
 
 ## Design read
 For fantasy football commissioners and their league-mates deciding where draft night happens; the register is the electric last ten seconds before a pick is announced, televised-sports tension, not SaaS calm.
@@ -48,7 +48,7 @@ Eyebrow budget: max 3 across S1–S7.
 - Section plates: dark ambient haze gradient plate; navy duotone turf macro; chyron light-streak plate.
 - Content imagery: 3 product UI stills (manager phone, commissioner console, TV board) same grade; snake board still + auction paddle still for the diptych.
 - Custom icon set: one sheet, 8 glyphs, 2px chalk stroke + scarlet node (timer, gavel, snake path, queue, TV, lock, code ticket, grade) sliced + background-removed.
-- Logo: FDR chyron-badge monogram; head kit (favicon/apple/manifest icons) derived from it.
+- Logo: FDN chyron-badge monogram; head kit (favicon/apple/manifest icons) derived from it.
 - OG image: 1200×630 composed wide in brand language.
 - Cinema video: ambient TV-band loop only if generation budget allows; scrub skipped (no ffmpeg), noted above.
 

@@ -1,4 +1,4 @@
-# Fantasy Draft Room runs as a Cloudflare Worker (D1 binding, `cloudflare:workers`
+# Fantasy Draft Nite runs as a Cloudflare Worker (D1 binding, `cloudflare:workers`
 # runtime module), not a plain Node server. To self-host it in Docker we run the
 # built Worker bundle on Cloudflare's own local runtime via `wrangler dev`
 # (Miniflare/workerd) instead of Cloudflare's cloud — no Cloudflare account
