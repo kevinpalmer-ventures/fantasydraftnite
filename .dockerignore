@@ -1,0 +1,11 @@
+**/node_modules
+**/dist
+**/.wrangler
+**/.output
+**/.vinxi
+**/.nitro
+app/refs
+.git
+.github
+*.md
+.dev.vars

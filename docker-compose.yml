@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    image: fantasy-draft-room:local
+    ports:
+      - "8080:8080"
+    volumes:
+      - draft-data:/data
+
+volumes:
+  draft-data:

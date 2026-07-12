@@ -1,0 +1,29 @@
+{
+  // Config used ONLY by the Docker image's `wrangler dev` process. The
+  // platform's own app/wrangler.jsonc is regenerated fresh by Higgsfield's
+  // deploy CI on every real deploy and is untouched by this file.
+  "name": "fantasy-draft-room",
+  "main": "dist/server/server.js",
+  "compatibility_date": "2025-05-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": false },
+
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+    "not_found_handling": "none"
+  },
+
+  "vars": { "HF_ENV": "docker", "APP_SLUG": "fantasy-draft-room" },
+
+  // Local-only D1: `wrangler dev` (no --remote) persists this to SQLite on
+  // disk via --persist-to, no Cloudflare account needed. Powers the waitlist
+  // form end to end inside the container.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "fantasy-draft-room-db",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ]
+}
