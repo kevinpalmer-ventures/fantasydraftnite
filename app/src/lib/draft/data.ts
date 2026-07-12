@@ -1,0 +1,212 @@
+// Mock player pool and league config for the demo draft room.
+// Ranks, ADP and auction values are plausible demo data, not licensed feeds.
+
+export type Position = "QB" | "RB" | "WR" | "TE" | "K" | "DST";
+
+export interface Player {
+  id: number;
+  name: string;
+  pos: Position;
+  team: string;
+  bye: number;
+  rank: number;
+  adp: number;
+  value: number; // suggested auction value
+  proj: number; // projected fantasy points
+}
+
+// [name, pos, team, bye, value]
+type Row = [string, Position, string, number, number];
+
+const ROWS: Row[] = [
+  ["Bijan Robinson", "RB", "ATL", 11, 62],
+  ["Ja'Marr Chase", "WR", "CIN", 10, 61],
+  ["Justin Jefferson", "WR", "MIN", 6, 59],
+  ["CeeDee Lamb", "WR", "DAL", 7, 57],
+  ["Saquon Barkley", "RB", "PHI", 9, 56],
+  ["Jahmyr Gibbs", "RB", "DET", 5, 55],
+  ["Amon-Ra St. Brown", "WR", "DET", 5, 52],
+  ["Puka Nacua", "WR", "LAR", 8, 51],
+  ["Malik Nabers", "WR", "NYG", 14, 49],
+  ["De'Von Achane", "RB", "MIA", 12, 48],
+  ["Nico Collins", "WR", "HOU", 13, 46],
+  ["Brian Thomas Jr.", "WR", "JAX", 11, 45],
+  ["Ashton Jeanty", "RB", "LV", 6, 44],
+  ["Drake London", "WR", "ATL", 11, 43],
+  ["A.J. Brown", "WR", "PHI", 9, 42],
+  ["Josh Jacobs", "RB", "GB", 10, 41],
+  ["Derrick Henry", "RB", "BAL", 7, 40],
+  ["Brock Bowers", "TE", "LV", 6, 39],
+  ["Christian McCaffrey", "RB", "SF", 14, 38],
+  ["Tyreek Hill", "WR", "MIA", 12, 36],
+  ["Josh Allen", "QB", "BUF", 12, 35],
+  ["Lamar Jackson", "QB", "BAL", 7, 34],
+  ["Garrett Wilson", "WR", "NYJ", 12, 33],
+  ["Trey McBride", "TE", "ARI", 8, 32],
+  ["Jonathan Taylor", "RB", "IND", 11, 32],
+  ["Davante Adams", "WR", "LAR", 8, 31],
+  ["Jayden Daniels", "QB", "WAS", 14, 30],
+  ["Kyren Williams", "RB", "LAR", 8, 30],
+  ["Ladd McConkey", "WR", "LAC", 5, 29],
+  ["Jaxon Smith-Njigba", "WR", "SEA", 10, 28],
+  ["Breece Hall", "RB", "NYJ", 12, 28],
+  ["George Kittle", "TE", "SF", 14, 27],
+  ["Jalen Hurts", "QB", "PHI", 9, 26],
+  ["Terry McLaurin", "WR", "WAS", 14, 25],
+  ["Mike Evans", "WR", "TB", 9, 24],
+  ["Chase Brown", "RB", "CIN", 10, 24],
+  ["James Cook", "RB", "BUF", 12, 23],
+  ["DK Metcalf", "WR", "PIT", 5, 22],
+  ["Omarion Hampton", "RB", "LAC", 5, 22],
+  ["Rashee Rice", "WR", "KC", 10, 21],
+  ["Patrick Mahomes", "QB", "KC", 10, 21],
+  ["Kenneth Walker III", "RB", "SEA", 10, 20],
+  ["Marvin Harrison Jr.", "WR", "ARI", 8, 20],
+  ["Joe Burrow", "QB", "CIN", 10, 19],
+  ["Xavier Worthy", "WR", "KC", 10, 19],
+  ["Sam LaPorta", "TE", "DET", 5, 18],
+  ["DeVonta Smith", "WR", "PHI", 9, 18],
+  ["Alvin Kamara", "RB", "NO", 11, 17],
+  ["TreVeyon Henderson", "RB", "NE", 14, 17],
+  ["Zay Flowers", "WR", "BAL", 7, 16],
+  ["Courtland Sutton", "WR", "DEN", 12, 16],
+  ["David Montgomery", "RB", "DET", 5, 15],
+  ["Tee Higgins", "WR", "CIN", 10, 15],
+  ["D'Andre Swift", "RB", "CHI", 5, 14],
+  ["Jaylen Waddle", "WR", "MIA", 12, 14],
+  ["Calvin Ridley", "WR", "TEN", 10, 13],
+  ["Aaron Jones", "RB", "MIN", 6, 13],
+  ["T.J. Hockenson", "TE", "MIN", 6, 12],
+  ["Chris Godwin", "WR", "TB", 9, 12],
+  ["Tony Pollard", "RB", "TEN", 10, 12],
+  ["Baker Mayfield", "QB", "TB", 9, 11],
+  ["George Pickens", "WR", "DAL", 7, 11],
+  ["Isiah Pacheco", "RB", "KC", 10, 11],
+  ["Jameson Williams", "WR", "DET", 5, 10],
+  ["Bo Nix", "QB", "DEN", 12, 10],
+  ["Travis Hunter", "WR", "JAX", 11, 10],
+  ["Jordan Addison", "WR", "MIN", 6, 9],
+  ["Brian Robinson Jr.", "RB", "WAS", 14, 9],
+  ["Jake Ferguson", "TE", "DAL", 7, 8],
+  ["Stefon Diggs", "WR", "NE", 14, 8],
+  ["Javonte Williams", "RB", "DAL", 7, 8],
+  ["Jared Goff", "QB", "DET", 5, 8],
+  ["Rome Odunze", "WR", "CHI", 5, 7],
+  ["Tyrone Tracy Jr.", "RB", "NYG", 14, 7],
+  ["Mark Andrews", "TE", "BAL", 7, 7],
+  ["Khalil Shakir", "WR", "BUF", 12, 6],
+  ["Jaylen Warren", "RB", "PIT", 5, 6],
+  ["Justin Herbert", "QB", "LAC", 5, 6],
+  ["Cooper Kupp", "WR", "SEA", 10, 6],
+  ["Zach Charbonnet", "RB", "SEA", 10, 5],
+  ["Deebo Samuel", "WR", "WAS", 14, 5],
+  ["Dak Prescott", "QB", "DAL", 7, 5],
+  ["Evan Engram", "TE", "DEN", 12, 5],
+  ["Chuba Hubbard", "RB", "CAR", 8, 5],
+  ["Jerry Jeudy", "WR", "CLE", 9, 4],
+  ["Tucker Kraft", "TE", "GB", 10, 4],
+  ["Najee Harris", "RB", "LAC", 5, 4],
+  ["Ricky Pearsall", "WR", "SF", 14, 4],
+  ["C.J. Stroud", "QB", "HOU", 13, 4],
+  ["Rhamondre Stevenson", "RB", "NE", 14, 3],
+  ["Keon Coleman", "WR", "BUF", 12, 3],
+  ["David Njoku", "TE", "CLE", 9, 3],
+  ["Caleb Williams", "QB", "CHI", 5, 3],
+  ["Jakobi Meyers", "WR", "LV", 6, 3],
+  ["Rachaad White", "RB", "TB", 9, 3],
+  ["Matthew Golden", "WR", "GB", 10, 3],
+  ["Kyler Murray", "QB", "ARI", 8, 3],
+  ["Austin Ekeler", "RB", "WAS", 14, 2],
+  ["Christian Kirk", "WR", "HOU", 13, 2],
+  ["Dalton Kincaid", "TE", "BUF", 12, 2],
+  ["Jayden Reed", "WR", "GB", 10, 2],
+  ["Jordan Mason", "RB", "MIN", 6, 2],
+  ["Brandon Aiyuk", "WR", "SF", 14, 2],
+  ["Justin Fields", "QB", "NYJ", 12, 2],
+  ["Adam Thielen", "WR", "CAR", 8, 1],
+  ["Ray Davis", "RB", "BUF", 12, 1],
+  ["Pat Freiermuth", "TE", "PIT", 5, 1],
+  ["Drake Maye", "QB", "NE", 14, 1],
+  ["Marvin Mims Jr.", "WR", "DEN", 12, 1],
+  ["Tyjae Spears", "RB", "TEN", 10, 1],
+  ["Hunter Henry", "TE", "NE", 14, 1],
+  ["Jauan Jennings", "WR", "SF", 14, 1],
+  ["Braelon Allen", "RB", "NYJ", 12, 1],
+  ["Jake Bates", "K", "DET", 5, 1],
+  ["Brandon Aubrey", "K", "DAL", 7, 1],
+  ["Justin Tucker", "K", "BAL", 7, 1],
+  ["Cameron Dicker", "K", "LAC", 5, 1],
+  ["Chris Boswell", "K", "PIT", 5, 1],
+  ["Harrison Butker", "K", "KC", 10, 1],
+  ["Tyler Bass", "K", "BUF", 12, 1],
+  ["Younghoe Koo", "K", "ATL", 11, 1],
+  ["Jake Elliott", "K", "PHI", 9, 1],
+  ["Evan McPherson", "K", "CIN", 10, 1],
+  ["Ravens D/ST", "DST", "BAL", 7, 1],
+  ["Steelers D/ST", "DST", "PIT", 5, 1],
+  ["Broncos D/ST", "DST", "DEN", 12, 1],
+  ["Eagles D/ST", "DST", "PHI", 9, 1],
+  ["Vikings D/ST", "DST", "MIN", 6, 1],
+  ["Texans D/ST", "DST", "HOU", 13, 1],
+  ["Packers D/ST", "DST", "GB", 10, 1],
+  ["Lions D/ST", "DST", "DET", 5, 1],
+  ["Chiefs D/ST", "DST", "KC", 10, 1],
+  ["Bills D/ST", "DST", "BUF", 12, 1],
+];
+
+export const PLAYERS: Player[] = ROWS.map(([name, pos, team, bye, value], i) => ({
+  id: i + 1,
+  name,
+  pos,
+  team,
+  bye,
+  rank: i + 1,
+  adp: Math.round((i + 1 + (((i * 7) % 5) - 2)) * 10) / 10,
+  value,
+  proj: Math.max(40, Math.round(330 - i * 2.1)),
+}));
+
+export const TEAM_NAMES: { name: string; owner: string }[] = [
+  { name: "Gridiron Grinders", owner: "Marcus" },
+  { name: "Couch Coaches", owner: "Priya" },
+  { name: "Fourth and Long", owner: "Dana" },
+  { name: "Draft Punk", owner: "Leo" },
+  { name: "Your Squad", owner: "You" },
+  { name: "Hail Mary Club", owner: "Sofia" },
+  { name: "Blitz Brigade", owner: "Jamal" },
+  { name: "Waiver Wolves", owner: "Erin" },
+  { name: "Prime Timers", owner: "Nate" },
+  { name: "End Zone Elite", owner: "Grace" },
+];
+
+export const USER_TEAM_INDEX = 4;
+export const TEAM_COUNT = 10;
+export const AUCTION_BUDGET = 200;
+
+// QB, RB, RB, WR, WR, WR, TE, FLEX, K, DST + 3 bench
+export const ROSTER_SLOTS: { slot: string; accepts: Position[] }[] = [
+  { slot: "QB", accepts: ["QB"] },
+  { slot: "RB1", accepts: ["RB"] },
+  { slot: "RB2", accepts: ["RB"] },
+  { slot: "WR1", accepts: ["WR"] },
+  { slot: "WR2", accepts: ["WR"] },
+  { slot: "WR3", accepts: ["WR"] },
+  { slot: "TE", accepts: ["TE"] },
+  { slot: "FLEX", accepts: ["RB", "WR", "TE"] },
+  { slot: "K", accepts: ["K"] },
+  { slot: "DST", accepts: ["DST"] },
+  { slot: "BN1", accepts: ["QB", "RB", "WR", "TE", "K", "DST"] },
+  { slot: "BN2", accepts: ["QB", "RB", "WR", "TE", "K", "DST"] },
+  { slot: "BN3", accepts: ["QB", "RB", "WR", "TE", "K", "DST"] },
+];
+
+export const ROSTER_SIZE = ROSTER_SLOTS.length;
+
+export const POS_COLORS: Record<Position, string> = {
+  QB: "#c98a3d",
+  RB: "#4f9d69",
+  WR: "#5b8dd6",
+  TE: "#a06cc9",
+  K: "#8a94a8",
+  DST: "#7a8699",
+};

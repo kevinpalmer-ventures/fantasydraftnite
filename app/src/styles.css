@@ -21,6 +21,12 @@
 
 @import "tw-animate-css";
 
+/* Fantasy Draft Room brand fonts */
+@import "@fontsource-variable/outfit";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
 @custom-variant dark (&:where([data-theme="default-dark"], [data-theme="default-dark"] *));
 
 /*
@@ -91,6 +97,38 @@
 
 :root {
   --radius: 0.625rem;
+}
+
+/* ---- Fantasy Draft Room brand tokens (design-brief.md) ---- */
+@theme {
+  --color-pitch: #0b1322;
+  --color-pitch-2: #0e1a30;
+  --color-pitch-3: #13203a;
+  --color-chalk: #eef2f8;
+  --color-mist: #93a0b8;
+  --color-scarlet: #d2394c;
+  --color-scarlet-deep: #a32536;
+  --font-display: "Outfit Variable", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-chyron: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  ::selection {
+    background: #d2394c;
+    color: #eef2f8;
+  }
+}
+
+@utility hairline {
+  border-color: rgb(238 242 248 / 0.14);
+}
+
+/* Static fallbacks when motion is reduced: keep everything visible and still */
+@media (prefers-reduced-motion: reduce) {
+  .fdr-motion {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 @layer base {
